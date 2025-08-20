@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Background */
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 100px 24px 140px 24px;
+  pointer-events: none;
+}
+
+.main:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, #f0f4ff 0%, #fafafa 100%);
+  z-index: 1;
+}
+
+.main:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/images/grid.svg");
+  opacity: 0.25;
+  filter: invert(0.8);
+  z-index: 0;
+}
+
+/* Gradient Glow */
+.gradient {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(at 20% 30%, #3b82f6 0px, transparent 50%),
+    radial-gradient(at 80% 20%, #22c55e 0px, transparent 50%),
+    radial-gradient(at 50% 90%, #ef4444 0px, transparent 50%),
+    radial-gradient(at 10% 70%, #8b5cf6 0px, transparent 50%);
+  filter: blur(120px) saturate(140%);
+  opacity: 0.18;
+  z-index: 2;
+}
+
+@media screen and (max-width: 640px) {
+  .main {
+    padding: 0;
+  }
+}
+
+/* App Container */
+.app {
+  @apply relative z-10 flex flex-col justify-center items-center max-w-7xl mx-auto sm:px-16 px-6;
+}
+
+/* Buttons */
+.black_btn {
+  @apply rounded-xl border border-black bg-black py-2 px-6 text-white shadow-md transition-all duration-300 hover:scale-105 hover:bg-white hover:text-black text-sm font-inter flex items-center justify-center;
+}
+
+.outline_btn {
+  @apply rounded-xl border border-gray-700 py-2 px-6 text-gray-800 bg-white shadow-sm transition-all duration-300 hover:bg-gray-900 hover:text-white text-sm font-inter flex items-center justify-center;
+}
+
+/* Typography */
+.head_text {
+  @apply mt-6 text-5xl font-extrabold leading-tight text-gray-900 sm:text-6xl;
+}
+
+.violet_gradient {
+  @apply bg-gradient-to-r from-violet-500 via-purple-500 to-pink-500 bg-clip-text text-transparent;
+}
+
+.green_gradient {
+  @apply bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent;
+}
+
+.blue_gradient {
+  @apply bg-gradient-to-r from-blue-500 via-indigo-500 to-cyan-400 bg-clip-text text-transparent;
+}
+
+.desc {
+  @apply mt-4 text-lg text-gray-600 sm:text-xl max-w-2xl leading-relaxed;
+}
+
+/* Search Input */
+.search_input {
+  @apply block w-full rounded-lg border border-gray-300 bg-white/80 backdrop-blur-md py-3 font-satoshi px-5 pr-12 text-sm shadow-md focus:border-indigo-500 focus:ring-2 focus:ring-indigo-400 transition-all;
+}
+
+/* Copy Button */
+.copy_btn {
+  @apply w-8 h-8 rounded-lg bg-white/40 shadow-inner backdrop-blur-md flex justify-center items-center cursor-pointer hover:bg-white/70 transition;
+}
+
+/* Glassmorphism Cards */
+.glassmorphism {
+  @apply rounded-2xl border border-gray-200 bg-white/30 shadow-lg backdrop-blur-lg p-5;
+}
+
+/* Post Layout */
+.prompt_layout {
+  @apply grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 mt-8;
+}
+
+/* Feed Section */
+.feed {
+  @apply mt-16 mx-auto w-full max-w-3xl flex flex-col items-center gap-4;
+}
+
+/* Forms */
+.form_textarea {
+  @apply w-full h-[200px] mt-2 p-3 text-sm text-gray-700 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none;
+}
+
+.form_input {
+  @apply w-full mt-2 p-3 text-sm text-gray-700 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none;
+}
+
+/* Navbar */
+.logo_text {
+  @apply max-sm:hidden font-satoshi font-bold text-lg text-gray-900 tracking-wide;
+}
+
+.dropdown {
+  @apply absolute right-0 top-full mt-3 w-56 p-4 rounded-lg bg-white/90 shadow-lg flex flex-col gap-2 backdrop-blur-lg;
+}
+
+.dropdown_link {
+  @apply text-sm font-inter text-gray-700 hover:text-indigo-600 font-medium transition;
+}
+
+/* Cards */
+.prompt_card {
+  @apply flex-1 rounded-2xl border border-gray-200 bg-white/70 shadow-lg backdrop-blur-md p-6 transition hover:shadow-xl hover:scale-[1.02];
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-start {
+  @apply flex justify-start items-start;
+}
+
+.flex-end {
+  @apply flex justify-end items-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
